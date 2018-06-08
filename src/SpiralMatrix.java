@@ -16,14 +16,26 @@ public class SpiralMatrix {
 			for(int i = maxCol; i >= minCol; i--) {
 				spiral[maxRow][i] = counter++;
 			}
+			if(counter>=m*n) {
+				break;
+			}
 			for(int i = maxRow-1; i>=minRow; i--) {
 				spiral[i][minCol] = counter++;
+			}
+			if(counter>=m*n) {
+				break;
 			}
 			for(int i = minCol+1; i <= maxCol; i++) {
 				spiral[minRow][i] = counter++;
 			}
+			if(counter>=m*n) {
+				break;
+			}
 			for(int i = minRow+1; i <= maxRow-1; i++) {
 				spiral[i][maxCol] = counter++;
+			}
+			if(counter>=m*n) {
+				break;
 			}
 			minCol++;
 			maxCol--;
